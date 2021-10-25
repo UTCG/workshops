@@ -4,7 +4,7 @@
  <title>UTCG Workshops</title>
  <link href="https://utcg.github.io/workshops/atom.xml" rel="self"/>
  <link href="https://utcg.github.io/workshops/"/>
- <updated>2021-10-25T04:33:27+02:00</updated>
+ <updated>2021-10-25T04:34:56+02:00</updated>
  <id>https://utcg.github.io</id>
  <author>
    <name>UofT Computer Graphics Club</name>
@@ -13,10 +13,10 @@
 
  
  <entry>
-   <title></title>
-   <link href="https://utcg.github.io/workshops/2021/10/25/2021-10-24-blender-recording"/>
-   <updated>2021-10-25T04:33:27+02:00</updated>
-   <id>https://utcg.github.io/2021/10/25/2021-10-24-blender-recording</id>
+   <title>Blender Workshop Recording</title>
+   <link href="https://utcg.github.io/workshops/2021/10/24/blender-recording"/>
+   <updated>2021-10-24T00:00:00+02:00</updated>
+   <id>https://utcg.github.io/2021/10/24/blender-recording</id>
    <content type="html">&lt;h1 id=&quot;utcg-blender-violin-workshop&quot;&gt;UTCG Blender Violin Workshop&lt;/h1&gt;
 
 &lt;p&gt;Here’s the recording for Part 1 of UTCG’s Blender Workshop on October 22, 2021.&lt;/p&gt;
