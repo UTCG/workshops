@@ -4,7 +4,7 @@
  <title>UTCG Workshops</title>
  <link href="https://utcg.github.io/workshops/atom.xml" rel="self"/>
  <link href="https://utcg.github.io/workshops/"/>
- <updated>2021-10-25T04:53:55+02:00</updated>
+ <updated>2021-10-25T05:01:31+02:00</updated>
  <id>https://utcg.github.io</id>
  <author>
    <name>UofT Computer Graphics Club</name>
@@ -23,7 +23,7 @@
 
 &lt;p&gt;If the video doesn’t work you can &lt;a href=&quot;https://github.com/UTCG/workshops/releases/download/v1.0.1/Blender.mp4&quot;&gt;download it&lt;/a&gt;.&lt;/p&gt;
 
-&lt;video style=&quot;max-width:100%&quot; src=&quot;https://github.com/UTCG/workshops/releases/download/v1.0.1/Blender.mp4&quot;&gt;&lt;/video&gt;
+&lt;video style=&quot;max-width:100%&quot; controls=&quot;&quot; src=&quot;https://github.com/UTCG/workshops/releases/download/v1.0.1/Blender.mp4&quot;&gt;&lt;/video&gt;
 </content>
  </entry>
  
