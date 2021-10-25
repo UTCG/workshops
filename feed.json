@@ -17,6 +17,30 @@
 "items": [
     
         {
+            "id": "https://powex.ml/Gesko/2021/10/25/2021-10-24-blender-recording",
+            "title": null,
+            "summary": null,
+            "content_text": "UTCG Blender Violin WorkshopHere’s the recording for Part 1 of UTCG’s Blender Workshop on October 22, 2021.If the video doesn’t work you can download it.",
+            "content_html": "<h1 id=\"utcg-blender-violin-workshop\">UTCG Blender Violin Workshop</h1><p>Here’s the recording for Part 1 of UTCG’s Blender Workshop on October 22, 2021.</p><p>If the video doesn’t work you can <a href=\"https://github.com/UTCG/workshops/releases/download/v1.0.1/Blender.mp4\">download it</a>.</p><video style=\"max-width:100%\" src=\"https://github.com/UTCG/workshops/releases/download/v1.0.1/Blender.mp4\"></video>",
+            "url": "https://powex.ml/Gesko/2021/10/25/2021-10-24-blender-recording",
+            
+            
+            
+            
+            
+            "date_published": "2021-10-25T04:28:22+02:00",
+            "date_modified": "2021-10-25T04:28:22+02:00",
+            
+                "author":  {
+                "name": "p0wex",
+                "url": null,
+                "avatar": null
+                }
+                
+            
+        },
+    
+        {
             "id": "https://powex.ml/Gesko/2019/08/31/difference-between-font-formats",
             "title": "Difference between font formats",
             "summary": "What is the difference between various font formats?",
