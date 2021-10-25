@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Blender Workshop Recording
-description: Part 1: Modelling a violin!
-summary: Part 1: Modelling a violin!
+description: Part 1 Modelling a violin!
+summary: Part 1 Modelling a violin!
 minute: 1
 ---
 
