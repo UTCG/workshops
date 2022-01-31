@@ -4,7 +4,7 @@
  <title>UTCG Workshops</title>
  <link href="https://utcg.github.io/workshops/atom.xml" rel="self"/>
  <link href="https://utcg.github.io/workshops/"/>
- <updated>2022-01-31T06:01:25+01:00</updated>
+ <updated>2022-01-31T06:11:40+01:00</updated>
  <id>https://utcg.github.io</id>
  <author>
    <name>UofT Computer Graphics Club</name>
@@ -40,13 +40,13 @@
 
 &lt;p&gt;One important thing to note is that it does not automatically convert between integers and floats. So it will throw an error if you do something like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;float x = 2;&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;float y = M_PI / 2&lt;/code&gt;. To deal with this, always put a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.&lt;/code&gt; after an integer, e.g. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;float x = 2.&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;float y = M_PI / 2.&lt;/code&gt;.&lt;/p&gt;
 
-&lt;h2 id=&quot;fragment-shader-basics---mandelbrot-set&quot;&gt;Fragment shader basics - Mandelbrot set&lt;/h2&gt;
+&lt;h2 id=&quot;fragment-shader-basics-trnasformations-colour---mandelbrot-set&quot;&gt;Fragment shader basics, Trnasformations, Colour - Mandelbrot Set&lt;/h2&gt;
 
 &lt;p&gt;To learn the basics, let’s start by rendering the &lt;a href=&quot;https://en.wikipedia.org/wiki/Mandelbrot_set&quot;&gt;Mandelbrot set&lt;/a&gt;. Here’s some &lt;a href=&quot;https://www.shadertoy.com/view/NdsyDX&quot;&gt;starter code&lt;/a&gt; - we won’t be paying much attention to the math, so the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mandel()&lt;/code&gt; function is provided (and you don’t need to understand it).&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/2/21/Mandel_zoom_00_mandelbrot_set.jpg&quot; alt=&quot;Mandelbrot Set by Wolfgang Beyer from Wikipedia&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;^replace that with iframe of actual shader later&lt;/p&gt;
+&lt;p&gt;TODO: ^replace that with iframe of actual shader later&lt;/p&gt;
 
 &lt;h3 id=&quot;what-does-our-shader-need-to-do&quot;&gt;What does our shader need to do?&lt;/h3&gt;
 
@@ -102,7 +102,7 @@
 
 &lt;p&gt;Throw &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sin()&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cos()&lt;/code&gt;, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;iTime&lt;/code&gt; into your colour calculation and we’ve got a rave going!&lt;/p&gt;
 
-&lt;h2 id=&quot;rotation-time-and-circles---analogue-clock&quot;&gt;Rotation, Time, and Circles - Analogue Clock&lt;/h2&gt;
+&lt;h2 id=&quot;rotation-time-circles---analogue-clock&quot;&gt;Rotation, Time, Circles - Analogue Clock&lt;/h2&gt;
 
 &lt;p&gt;Our next example is an analogue clock. Here’s some &lt;a href=&quot;https://www.shadertoy.com/view/fdlyz2&quot;&gt;starter code&lt;/a&gt; - we’ve created a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;uv&lt;/code&gt; variable for you, to give you the coordinates of the pixel from the centre of the screen. Here’s the &lt;a href=&quot;https://www.shadertoy.com/view/fslcR2&quot;&gt;finished shader&lt;/a&gt; for reference.&lt;/p&gt;
 
@@ -194,6 +194,62 @@
 &lt;p&gt;To make the clock show the actual time, take a look at the GLSL &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;iDate&lt;/code&gt; variable. Note that this is a 4D vector! To make it even more clock-like, see if you can use the GLSL &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;floor()&lt;/code&gt; function to make the seconds hand “tick” instead of rotating smoothly.&lt;/p&gt;
 
 &lt;p&gt;You can also make it look better by changing the lengths of the hands, so that they never overlap. Other aesthetic upgrades could be a bezel, or patterns on the clock face. Numbers are a bit more difficult, but look into textures if you have some time and wanna try it out.&lt;/p&gt;
+
+&lt;h2 id=&quot;using-sin-and-cos-creatively---noise-art&quot;&gt;Using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sin()&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cos()&lt;/code&gt; creatively - Noise art&lt;/h2&gt;
+
+&lt;p&gt;The goal of this workshop was to give you enough shaders knowledge to make cool noise art, like this:&lt;/p&gt;
+
+&lt;iframe width=&quot;640&quot; height=&quot;360&quot; frameborder=&quot;0&quot; src=&quot;https://www.shadertoy.com/embed/ssScDw?gui=true&amp;amp;t=10&amp;amp;paused=true&amp;amp;muted=false&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;How do we do this?&lt;/p&gt;
+
+&lt;p&gt;…&lt;/p&gt;
+
+&lt;p&gt;Just kinda messing around tbh.&lt;/p&gt;
+
+&lt;h3 id=&quot;creating-patterns-with-functions&quot;&gt;Creating patterns with functions&lt;/h3&gt;
+
+&lt;p&gt;We know we can &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mix()&lt;/code&gt; two colours as long as we have a value between &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1&lt;/code&gt;. And since the trigonometric functions &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sin()&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cos()&lt;/code&gt; are periodic, we can use them to create patterns. We can also combine them in weird ways to get unexpected patterns.&lt;/p&gt;
+
+&lt;div class=&quot;language-glsl highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;noiseFunc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;something&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/7/71/Sine_cosine_one_period.svg&quot; alt=&quot;Sine and Cosine graph by Geek3 from Wikipedia&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sin()&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cos()&lt;/code&gt; both range between &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-1&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1&lt;/code&gt;, so we need to transform them to the range we want.&lt;/p&gt;
+
+&lt;div class=&quot;language-glsl highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;noiseFunc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(...);&lt;/span&gt;
+
+	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// transform cos value so that it's between 0 and 1&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;What do we put inside that &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cos()&lt;/code&gt; function? Anything basically. Go crazy. Just do random stuff. Better if you mix &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;x&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;y&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;iTime&lt;/code&gt;, more trigonometry, etc in there. Here’s what I did for the example above:&lt;/p&gt;
+
+&lt;div class=&quot;language-glsl highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;noiseFunc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;
+		            &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;iTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+		            &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iTime&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+		            &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+		            &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// transform cos value so that it's between 0 and 1&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Feel free to also use the functions we provided earlier such as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mandel()&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rot()&lt;/code&gt;, to mix more colours, to use if/else to render different things for different parts of the screen, etc. Go crazy.&lt;/p&gt;
+
+&lt;p&gt;When you’re done, submit your shader to the competition here: TODO&lt;/p&gt;
+
+&lt;h2 id=&quot;thanks&quot;&gt;Thanks!&lt;/h2&gt;
+
+&lt;p&gt;If you enjoyed this workshop, make sure you follow us on social media, join our mailing list, and join our Discord to keep up with our other events! You can find all of it on our website &lt;a href=&quot;https://utcg.club/&quot;&gt;utcg.club&lt;/a&gt;.&lt;/p&gt;
 </content>
  </entry>
  
