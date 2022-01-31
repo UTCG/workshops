@@ -4,7 +4,7 @@
  <title>UTCG Workshops</title>
  <link href="https://utcg.github.io/workshops/atom.xml" rel="self"/>
  <link href="https://utcg.github.io/workshops/"/>
- <updated>2022-01-31T06:17:11+01:00</updated>
+ <updated>2022-01-31T06:18:08+01:00</updated>
  <id>https://utcg.github.io</id>
  <author>
    <name>UofT Computer Graphics Club</name>
@@ -40,7 +40,7 @@
 
 &lt;p&gt;One important thing to note is that it does not automatically convert between integers and floats. So it will throw an error if you do something like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;float x = 2;&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;float y = M_PI / 2&lt;/code&gt;. To deal with this, always put a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.&lt;/code&gt; after an integer, e.g. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;float x = 2.&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;float y = M_PI / 2.&lt;/code&gt;.&lt;/p&gt;
 
-&lt;h2 id=&quot;fragment-shader-basics-trnasformations-colour---mandelbrot-set&quot;&gt;Fragment shader basics, Trnasformations, Colour - Mandelbrot Set&lt;/h2&gt;
+&lt;h2 id=&quot;fragment-shader-basics-transformations-colour---mandelbrot-set&quot;&gt;Fragment shader basics, Transformations, Colour - Mandelbrot Set&lt;/h2&gt;
 
 &lt;p&gt;To learn the basics, let’s start by rendering the &lt;a href=&quot;https://en.wikipedia.org/wiki/Mandelbrot_set&quot;&gt;Mandelbrot set&lt;/a&gt;. Here’s some &lt;a href=&quot;https://www.shadertoy.com/view/NdsyDX&quot;&gt;starter code&lt;/a&gt; - we won’t be paying much attention to the math, so the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mandel()&lt;/code&gt; function is provided (and you don’t need to understand it).&lt;/p&gt;
 
