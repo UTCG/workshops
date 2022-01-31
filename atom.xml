@@ -4,7 +4,7 @@
  <title>UTCG Workshops</title>
  <link href="https://utcg.github.io/workshops/atom.xml" rel="self"/>
  <link href="https://utcg.github.io/workshops/"/>
- <updated>2022-01-31T01:49:52+01:00</updated>
+ <updated>2022-01-31T05:26:48+01:00</updated>
  <id>https://utcg.github.io</id>
  <author>
    <name>UofT Computer Graphics Club</name>
@@ -23,15 +23,25 @@
 
 &lt;h3 id=&quot;what-is-a-shader&quot;&gt;What is a shader?&lt;/h3&gt;
 
-&lt;p&gt;A &lt;em&gt;pixel shader&lt;/em&gt; (aka &lt;em&gt;fragment shader&lt;/em&gt;) is code that runs for each pixel being rendered. There are other types of shaders (e.g. vertex shaders, geometry shaders, etc) but we won’t cover them today. Generally, they’re code that runs on the GPU, usually for rendering graphics. GPUs are great for shaders, because they’re made for doing similar work for lots of different inputs - in this case, they’ll run the same shader code for each pixel on the screen.&lt;/p&gt;
+&lt;p&gt;A &lt;em&gt;pixel shader&lt;/em&gt; (aka &lt;em&gt;fragment shader&lt;/em&gt;) is code that runs for each pixel being rendered. There are other types of shaders (e.g. vertex shaders, geometry shaders, etc) but we won’t cover them today. Generally, they’re code that runs on the GPU, usually for rendering graphics. In games, they’re usually used for lighting effects (they are called shaders) and other fancy effects at the end of the rendering pipeline. GPUs are great for shaders, because they’re made for doing similar work for lots of different inputs - in this case, they’ll run the same shader code for each pixel on the screen.&lt;/p&gt;
+
+&lt;h3 id=&quot;coding-shaders&quot;&gt;Coding shaders&lt;/h3&gt;
+
+&lt;p&gt;Shaders are usually written in &lt;em&gt;GLSL&lt;/em&gt;, which is &lt;em&gt;OpenGL Shading Language&lt;/em&gt;. It’s kind of like C/C++. This is the language that Minecraft shaders use!&lt;/p&gt;
+
+&lt;p&gt;One important thing to note is that it does not automatically convert between integers and floats. So it will throw an error if you do something like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;float x = 2;&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;float y = M_PI / 2&lt;/code&gt;. To deal with this, always put a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.&lt;/code&gt; after an integer, e.g. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;float x = 2.&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;float y = M_PI / 2.&lt;/code&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;fragment-shader-basics---mandelbrot-set&quot;&gt;Fragment shader basics - Mandelbrot set&lt;/h2&gt;
 
-&lt;p&gt;To learn the basics, let’s start by rendering the &lt;a href=&quot;https://en.wikipedia.org/wiki/Mandelbrot_set&quot;&gt;Mandelbrot set&lt;/a&gt;. Here’s some &lt;a href=&quot;https://www.shadertoy.com/view/NdsyDX&quot;&gt;starter code&lt;/a&gt; - we won’t be paying much attention to the math, so the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mandel()&lt;/code&gt; function is provided.&lt;/p&gt;
+&lt;p&gt;To learn the basics, let’s start by rendering the &lt;a href=&quot;https://en.wikipedia.org/wiki/Mandelbrot_set&quot;&gt;Mandelbrot set&lt;/a&gt;. Here’s some &lt;a href=&quot;https://www.shadertoy.com/view/NdsyDX&quot;&gt;starter code&lt;/a&gt; - we won’t be paying much attention to the math, so the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mandel()&lt;/code&gt; function is provided (and you don’t need to understand it).&lt;/p&gt;
 
-&lt;h3 id=&quot;what-are-we-doing&quot;&gt;What are we doing?&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/2/21/Mandel_zoom_00_mandelbrot_set.jpg&quot; alt=&quot;Mandelbrot Set by Wolfgang Beyer from Wikipedia&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Our fragment shader’s input is a pixel on the screen and its output is its colour, as a 4D RGBA vector - that’s Red/Green/Blue/Alpha.&lt;/p&gt;
+&lt;p&gt;^replace that with iframe of actual shader later&lt;/p&gt;
+
+&lt;h3 id=&quot;what-does-our-shader-need-to-do&quot;&gt;What does our shader need to do?&lt;/h3&gt;
+
+&lt;p&gt;Our fragment shader’s input is a pixel on the screen and its output is its colour, as a 4D RGBA (Red/Green/Blue/Alpha) vector.&lt;/p&gt;
 
 &lt;div class=&quot;language-glsl highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;mainImage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;out&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;vec4&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fragColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;vec2&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fragCoord&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -39,13 +49,55 @@
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;…&lt;/p&gt;
+&lt;p&gt;We’ve given a variable &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;vec2 uv&lt;/code&gt; to represent the transformed coordinates of a pixel. We’ll use it and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mandel()&lt;/code&gt; to calculate the colour for each pixel.&lt;/p&gt;
 
-&lt;p&gt;[put in rest of mandel stuff]&lt;/p&gt;
+&lt;div class=&quot;language-glsl highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;mainImage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;out&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;vec4&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fragColor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;vec2&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fragCoord&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;kt&quot;&gt;vec2&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;uv&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fragCoord&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iResolution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+	&lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mandel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;uv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;uv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// mandel returns a value between 0 and 1&lt;/span&gt;
+
+	&lt;span class=&quot;kt&quot;&gt;vec3&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;vec3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+	&lt;span class=&quot;n&quot;&gt;fragColor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;vec4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Since we’ve put &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;value&lt;/code&gt; into the R/G/B parts of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;col&lt;/code&gt;, the resulting image should be in greyscale.&lt;/p&gt;
+
+&lt;h3 id=&quot;transformation&quot;&gt;Transformation&lt;/h3&gt;
+
+&lt;p&gt;We mentioned that &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;uv&lt;/code&gt; are the transformed coordinates. You might recall from high school that we can transform coordinates by multiplying/dividing our vector by a number to stretch, or by adding/subtracting another vector to shift. Try doing this yourself to get the whole set in the frame!&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;void mainImage( out vec4 fragColor, in vec2 fragCoord )
+{
+	vec2 uv = vec2(fragCoord.x / hrztl_stretch - hrztl_shift,
+		           fragCoord.y / vrtcl_stretch - vrtcl_shift);
+
+	...
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;working-with-colour---mix&quot;&gt;Working with colour - &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mix()&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;We can make other colours by putting different values into the R/G/B parts of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;col&lt;/code&gt;, e.g. &amp;lt;div style=&quot;color:#FF8080&quot;&amp;gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;red = vec3(1., .5, .5)&lt;/code&gt;&amp;lt;/div&amp;gt; or &amp;lt;div style=&quot;color:#4080FF&quot;&amp;gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;blue = vec3(.25, .5, 1.)&lt;/code&gt;&amp;lt;/div&amp;gt;.&lt;/p&gt;
+
+&lt;p&gt;We can also interpolate between colours (or really anything) using the GLSL function &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mix()&lt;/code&gt;. The first two arguments are the values we want to interpolate between, and the last is the “slider value” to “slide” between the two, from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0&lt;/code&gt; to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-glsl highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;vec3&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;red&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;vec3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;vec3&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;blue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;vec3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.);&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;vec3&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;blue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mandel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;extras&quot;&gt;Extras&lt;/h3&gt;
+
+&lt;p&gt;Throw &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sin()&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cos()&lt;/code&gt;, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;iTime&lt;/code&gt; into your colour calculation and we’ve got a rave going!&lt;/p&gt;
 
 &lt;h2 id=&quot;rotation-time-and-circles---analogue-clock&quot;&gt;Rotation, Time, and Circles - Analogue Clock&lt;/h2&gt;
 
 &lt;p&gt;Our next example is an analogue clock. Here’s some &lt;a href=&quot;https://www.shadertoy.com/view/fdlyz2&quot;&gt;starter code&lt;/a&gt; - we’ve created a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;uv&lt;/code&gt; variable for you, to give you the coordinates of the pixel from the centre of the screen. Here’s the &lt;a href=&quot;https://www.shadertoy.com/view/fslcR2&quot;&gt;finished shader&lt;/a&gt; for reference.&lt;/p&gt;
+
+&lt;iframe width=&quot;640&quot; height=&quot;360&quot; frameborder=&quot;0&quot; src=&quot;https://www.shadertoy.com/embed/fslcR2?gui=true&amp;amp;t=10&amp;amp;paused=true&amp;amp;muted=false&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
 &lt;h3 id=&quot;creating-the-clock-face&quot;&gt;Creating the clock face&lt;/h3&gt;
 
@@ -128,13 +180,11 @@
 
 &lt;p&gt;Try doing an hour hand yourself!&lt;/p&gt;
 
-&lt;h3 id=&quot;extras&quot;&gt;Extras&lt;/h3&gt;
+&lt;h3 id=&quot;extras-1&quot;&gt;Extras&lt;/h3&gt;
 
-&lt;p&gt;To make it even more clock-like, see if you can use the GLSL &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;floor()&lt;/code&gt; function to make the seconds hand “tick” instead of rotating smoothly.&lt;/p&gt;
+&lt;p&gt;To make the clock show the actual time, take a look at the GLSL &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;iDate&lt;/code&gt; variable. Note that this is a 4D vector! To make it even more clock-like, see if you can use the GLSL &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;floor()&lt;/code&gt; function to make the seconds hand “tick” instead of rotating smoothly.&lt;/p&gt;
 
-&lt;p&gt;You can also make it look better by changing the lengths of the hands, so that they never overlap.&lt;/p&gt;
-
-&lt;p&gt;Another aesthetic upgrade might be a bezel, or patterns on the clock face. Numbers are a bit more difficult, but look into textures if you have some time and wanna try it out.&lt;/p&gt;
+&lt;p&gt;You can also make it look better by changing the lengths of the hands, so that they never overlap. Other aesthetic upgrades could be a bezel, or patterns on the clock face. Numbers are a bit more difficult, but look into textures if you have some time and wanna try it out.&lt;/p&gt;
 </content>
  </entry>
  
