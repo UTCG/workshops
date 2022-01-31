@@ -4,7 +4,7 @@
  <title>UTCG Workshops</title>
  <link href="https://utcg.github.io/workshops/atom.xml" rel="self"/>
  <link href="https://utcg.github.io/workshops/"/>
- <updated>2022-01-31T05:32:18+01:00</updated>
+ <updated>2022-01-31T05:37:59+01:00</updated>
  <id>https://utcg.github.io</id>
  <author>
    <name>UofT Computer Graphics Club</name>
@@ -80,7 +80,7 @@
 
 &lt;h3 id=&quot;working-with-colour---mix&quot;&gt;Working with colour - &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mix()&lt;/code&gt;&lt;/h3&gt;
 
-&lt;p&gt;We can make other colours by putting different values into the R/G/B parts of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;col&lt;/code&gt;, e.g. &lt;span style=&quot;color:#FF8080;&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;red = vec3(1., .5, .5)&lt;/code&gt;&lt;/span&gt; or &lt;span style=&quot;color:#4080FF;&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;blue = vec3(.25, .5, 1.)&lt;/code&gt;&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;We can make other colours by putting different values into the R/G/B parts of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;col&lt;/code&gt;, e.g. &lt;span style=&quot;color:#FF8080 !important;&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;red = vec3(1., .5, .5)&lt;/code&gt;&lt;/span&gt; or &lt;span style=&quot;color:#4080FF !important;&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;blue = vec3(.25, .5, 1.)&lt;/code&gt;&lt;/span&gt;.&lt;/p&gt;
 
 &lt;p&gt;We can also interpolate between colours (or really anything) using the GLSL function &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mix()&lt;/code&gt;. The first two arguments are the values we want to interpolate between, and the last is the “slider value” to “slide” between the two, from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0&lt;/code&gt; to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1&lt;/code&gt;.&lt;/p&gt;
 
