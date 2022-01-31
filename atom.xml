@@ -4,7 +4,7 @@
  <title>UTCG Workshops</title>
  <link href="https://utcg.github.io/workshops/atom.xml" rel="self"/>
  <link href="https://utcg.github.io/workshops/"/>
- <updated>2022-01-31T06:19:07+01:00</updated>
+ <updated>2022-01-31T06:22:53+01:00</updated>
  <id>https://utcg.github.io</id>
  <author>
    <name>UofT Computer Graphics Club</name>
@@ -154,7 +154,7 @@
 
 &lt;h3 id=&quot;making-it-move&quot;&gt;Making it move&lt;/h3&gt;
 
-&lt;p&gt;Using linear algebra, we’ve created a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rot()&lt;/code&gt; function which returns a matrix that will rotate a 2D vector clockwise by a given angle in radians (&lt;a href=&quot;https://en.wikipedia.org/wiki/Rotation_matrix&quot;&gt;more on rotation matrices&lt;/a&gt;. To get a rotated vector, you multiply a rotation matrix times a vector. For example,&lt;/p&gt;
+&lt;p&gt;Using linear algebra, we’ve created a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rot()&lt;/code&gt; function which returns a matrix that will rotate a 2D vector clockwise by a given angle in radians (&lt;a href=&quot;https://en.wikipedia.org/wiki/Rotation_matrix&quot;&gt;more on rotation matrices&lt;/a&gt;). To get a rotated vector, you multiply a rotation matrix times a vector. For example,&lt;/p&gt;
 
 &lt;div class=&quot;language-glsl highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;vec2&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;northEast&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;vec2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;kt&quot;&gt;vec2&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;southEast&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;M_PI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;northEast&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
