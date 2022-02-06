@@ -4,7 +4,7 @@
  <title>UTCG Workshops</title>
  <link href="https://utcg.github.io/workshops/atom.xml" rel="self"/>
  <link href="https://utcg.github.io/workshops/"/>
- <updated>2022-02-01T18:47:48+01:00</updated>
+ <updated>2022-02-06T18:37:27+01:00</updated>
  <id>https://utcg.github.io</id>
  <author>
    <name>UofT Computer Graphics Club</name>
@@ -30,9 +30,43 @@
 
 &lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
 
+&lt;h3 id=&quot;what-are-we-gonna-cover&quot;&gt;What are we gonna cover?&lt;/h3&gt;
+
+&lt;p&gt;This workshop covers the basics of shader programming in GLSL. We’ll only be making 2D graphics. We’re hoping that by the end of the workshop, you have a good enough grasp on shader programming that you can make your own animated noise art, and get started working on more complicated shaders for your own graphics and game development projects (or Minecraft).&lt;/p&gt;
+
+&lt;p&gt;We hope that you follow along through the code during the workshop, whether you’re writing it yourself with us or uncommenting lines as we write them. Below is all the code we’ll be using:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Part 1: Mandelbrot
+    &lt;ul&gt;
+      &lt;li&gt;Minimal starter code: https://www.shadertoy.com/view/NdSyW3&lt;/li&gt;
+      &lt;li&gt;Starter code with finished example commented out: https://www.shadertoy.com/view/NdsyDX&lt;/li&gt;
+      &lt;li&gt;Finished code: https://www.shadertoy.com/view/fsSyW3&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Part 2: Clock
+    &lt;ul&gt;
+      &lt;li&gt;Minimal starter code: https://www.shadertoy.com/view/NsSyW3&lt;/li&gt;
+      &lt;li&gt;Starter code with finished example commented out: https://www.shadertoy.com/view/fsByW3&lt;/li&gt;
+      &lt;li&gt;Finished code: https://www.shadertoy.com/view/fdByW3&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Part 3: Noise art
+    &lt;ul&gt;
+      &lt;li&gt;Starter code: https://www.shadertoy.com/view/7s2yzy&lt;/li&gt;
+      &lt;li&gt;Example finished code: https://www.shadertoy.com/view/ssScDw&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Competition
+    &lt;ul&gt;
+      &lt;li&gt;Starter code: https://www.shadertoy.com/view/sdSczG&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;h3 id=&quot;what-is-a-shader&quot;&gt;What is a shader?&lt;/h3&gt;
 
-&lt;p&gt;A &lt;em&gt;pixel shader&lt;/em&gt; (aka &lt;em&gt;fragment shader&lt;/em&gt;) is code that runs for each pixel being rendered. There are other types of shaders (e.g. vertex shaders, geometry shaders, etc) but we won’t cover them today. Generally, they’re code that runs on the GPU, usually for rendering graphics. In games, they’re usually used for lighting effects (they are called shaders) and other fancy effects at the end of the rendering pipeline. GPUs are great for shaders, because they’re made for doing similar work for lots of different inputs - in this case, they’ll run the same shader code for each pixel on the screen.&lt;/p&gt;
+&lt;p&gt;A &lt;em&gt;pixel shader&lt;/em&gt; (aka &lt;em&gt;fragment shader&lt;/em&gt;) is code that runs for each pixel being rendered. There are other types of shaders (e.g. vertex shaders, geometry shaders, etc) but we won’t cover them in this workshop. Generally, they’re code that runs on the GPU, usually for rendering graphics. In games, they’re usually used for lighting effects (they are called shaders) and other fancy effects at the end of the rendering pipeline. GPUs are great for shaders, because they’re made for doing similar work for lots of different inputs - in this case, they’ll run the same shader code for each pixel on the screen.&lt;/p&gt;
 
 &lt;h3 id=&quot;coding-shaders&quot;&gt;Coding shaders&lt;/h3&gt;
 
@@ -44,9 +78,15 @@
 
 &lt;p&gt;To learn the basics, let’s start by rendering the &lt;a href=&quot;https://en.wikipedia.org/wiki/Mandelbrot_set&quot;&gt;Mandelbrot set&lt;/a&gt;. Here’s some &lt;a href=&quot;https://www.shadertoy.com/view/NdsyDX&quot;&gt;starter code&lt;/a&gt; - we won’t be paying much attention to the math, so the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mandel()&lt;/code&gt; function is provided (and you don’t need to understand it).&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/2/21/Mandel_zoom_00_mandelbrot_set.jpg&quot; alt=&quot;Mandelbrot Set by Wolfgang Beyer from Wikipedia&quot; /&gt;&lt;/p&gt;
+&lt;iframe width=&quot;640&quot; height=&quot;360&quot; frameborder=&quot;0&quot; src=&quot;https://www.shadertoy.com/embed/fsSyW3?gui=true&amp;amp;t=10&amp;amp;paused=true&amp;amp;muted=false&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
-&lt;p&gt;TODO: ^replace that with iframe of actual shader later&lt;/p&gt;
+&lt;p&gt;Code:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Minimal starter code: https://www.shadertoy.com/view/NdSyW3&lt;/li&gt;
+  &lt;li&gt;Starter code with finished example commented out: https://www.shadertoy.com/view/NdsyDX&lt;/li&gt;
+  &lt;li&gt;Finished code: https://www.shadertoy.com/view/fsSyW3&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h3 id=&quot;what-does-our-shader-need-to-do&quot;&gt;What does our shader need to do?&lt;/h3&gt;
 
@@ -105,15 +145,32 @@
 
 &lt;h2 id=&quot;rotation-time-circles---analogue-clock&quot;&gt;Rotation, Time, Circles - Analogue Clock&lt;/h2&gt;
 
-&lt;p&gt;Our next example is an analogue clock. Here’s some &lt;a href=&quot;https://www.shadertoy.com/view/fdlyz2&quot;&gt;starter code&lt;/a&gt; - we’ve created a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;uv&lt;/code&gt; variable for you, to give you the coordinates of the pixel from the centre of the screen. Here’s the &lt;a href=&quot;https://www.shadertoy.com/view/fslcR2&quot;&gt;finished shader&lt;/a&gt; for reference.&lt;/p&gt;
+&lt;p&gt;Our next example is an analogue clock.&lt;/p&gt;
 
 &lt;iframe width=&quot;640&quot; height=&quot;360&quot; frameborder=&quot;0&quot; src=&quot;https://www.shadertoy.com/embed/fslcR2?gui=true&amp;amp;t=10&amp;amp;paused=false&amp;amp;muted=false&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Code:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Minimal starter code: https://www.shadertoy.com/view/NsSyW3&lt;/li&gt;
+  &lt;li&gt;Starter code with finished example commented out: https://www.shadertoy.com/view/fsByW3&lt;/li&gt;
+  &lt;li&gt;Finished code: https://www.shadertoy.com/view/fdByW3&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Note that this time we’ve transformed the pixel coordinates for you, so that the centre of the screen has coordinates $(0, 0)$.&lt;/p&gt;
 
 &lt;h3 id=&quot;creating-the-clock-face&quot;&gt;Creating the clock face&lt;/h3&gt;
 
 &lt;p&gt;Clocks are circles. This is basic anthropology. But what is a circle?&lt;/p&gt;
 
-&lt;p&gt;A circle is all the points within some radius $r$ of the centre of the circle $\mathbf c$. So if we have a pixel whose coordinates are $\mathbf p = (x, y)$, then we can check if the pixel is within the circle by checking if $\text{length}(\mathbf p - \mathbf c) &amp;lt; r$. Let’s do that in our code.&lt;/p&gt;
+&lt;p&gt;A circle is all the points within some radius $r$ of the centre of the circle $\mathbf c$. So if we have a pixel whose coordinates are $\mathbf p = (x, y)$, then we can check if the pixel is within the circle by checking if $\text{length}(\mathbf p - \mathbf c) &amp;lt; r$. Let’s make a function to do that using the GLSL &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;length()&lt;/code&gt; function:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bool isInCircle(vec2 centre, float radius, vec2 point)
+{
+    // return true if point is closer to centre than r
+    return length(point - centre) &amp;lt; radius;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Let’s set the centre of our clock to be the centre of the screen, and give it a radius of 0.4:&lt;/p&gt;
 
@@ -121,9 +178,9 @@
 &lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clockRadius&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;And now, let’s use the GLSL &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;length&lt;/code&gt; function to implement the circle formula and colour the clock face red:&lt;/p&gt;
+&lt;p&gt;And now, let’s use our circle function to colour the clock face red:&lt;/p&gt;
 
-&lt;div class=&quot;language-glsl highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;uv&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clockCentre&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clockRadius&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;div class=&quot;language-glsl highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isInCircle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clockCentre&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clockRadius&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;uv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;vec3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -146,7 +203,7 @@
 
 &lt;span class=&quot;c1&quot;&gt;// put the following code AFTER the clock face colour code&lt;/span&gt;
 
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;uv&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;secondsHand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;handRadius&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isInCircle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;secondsHand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;handRadius&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;uv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;vec3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -184,7 +241,7 @@
 
 &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
 
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;uv&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;minutesHand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;handRadius&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isInCircle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;minutesHand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;handRadius&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;uv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;vec3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -194,7 +251,7 @@
 
 &lt;h3 id=&quot;extras-1&quot;&gt;Extras&lt;/h3&gt;
 
-&lt;p&gt;To make the clock show the actual time, take a look at the GLSL &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;iDate&lt;/code&gt; variable. Note that this is a 4D vector! To make it even more clock-like, see if you can use the GLSL &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;floor()&lt;/code&gt; function to make the seconds hand “tick” instead of rotating smoothly.&lt;/p&gt;
+&lt;p&gt;To make the clock show the actual time, take a look at the GLSL &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;iDate&lt;/code&gt; variable. Note that this is a 4D vector. To make it even more clock-like, see if you can use the GLSL &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;floor()&lt;/code&gt; function to make the seconds hand “tick” instead of rotating smoothly.&lt;/p&gt;
 
 &lt;p&gt;You can also make it look better by changing the lengths of the hands, so that they never overlap. Other aesthetic upgrades could be a bezel, or patterns on the clock face. Numbers are a bit more difficult, but look into textures if you have some time and wanna try it out.&lt;/p&gt;
 
@@ -209,6 +266,14 @@
 &lt;p&gt;…&lt;/p&gt;
 
 &lt;p&gt;Just kinda messing around tbh.&lt;/p&gt;
+
+&lt;p&gt;Code:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Starter code for example: https://www.shadertoy.com/view/7s2yzy&lt;/li&gt;
+  &lt;li&gt;Example finished code: https://www.shadertoy.com/view/ssScDw&lt;/li&gt;
+  &lt;li&gt;Competition starter code: https://www.shadertoy.com/view/sdSczG&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h3 id=&quot;creating-patterns-with-functions&quot;&gt;Creating patterns with functions&lt;/h3&gt;
 
@@ -248,9 +313,17 @@
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Feel free to also use the functions we provided earlier such as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mandel()&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rot()&lt;/code&gt;, to mix more colours, to use if/else to render different things for different parts of the screen, etc. Go crazy.&lt;/p&gt;
+&lt;p&gt;Feel free to mix more colours, to use if/else to render different things for different parts of the screen, use the functions we provided earlier such as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mandel()&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rot()&lt;/code&gt;, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;isInCircle&lt;/code&gt;, and etc. Go crazy.&lt;/p&gt;
 
-&lt;p&gt;When you’re done, submit your shader to the competition here: TODO&lt;/p&gt;
+&lt;p&gt;When you’re done, submit your shader to the competition by listing it as “public” and adding the tag &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;utcg2022&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;where-to-learn-more&quot;&gt;Where to learn more&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://thebookofshaders.com/&quot;&gt;The Book of Shaders&lt;/a&gt; is an incomplete resource on GLSL programming, but the pages it does have are excellent quality and easy to follow. They’re especially great if you’re interested in more complex noise art, like &lt;a href=&quot;https://thebookofshaders.com/edit.php#11/lava-lamp.frag&quot;&gt;this&lt;/a&gt; from page 11.&lt;/p&gt;
+
+&lt;p&gt;The real heavyweight in shaders is Inigo Quiles, co-creator of Shadertoy. &lt;a href=&quot;https://www.iquilezles.org/index.html&quot;&gt;His website&lt;/a&gt; has articles, tutorials, demos, and more of graphics programming, including more noise art like &lt;a href=&quot;https://www.iquilezles.org/www/articles/warp/warp.htm&quot;&gt;this&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;There are many more tutorials on shaders that are just a search away, since GLSL is a very widely-used technology. Plus, they’re covered a little bit in &lt;a href=&quot;https://github.com/alecjacobson/computer-graphics-csc317&quot;&gt;CSC317 - Computer Graphics&lt;/a&gt; (formerly CSC418).&lt;/p&gt;
 
 &lt;h2 id=&quot;thanks&quot;&gt;Thanks!&lt;/h2&gt;
 
