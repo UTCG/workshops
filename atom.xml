@@ -4,7 +4,7 @@
  <title>UTCG Workshops</title>
  <link href="https://utcg.github.io/workshops/atom.xml" rel="self"/>
  <link href="https://utcg.github.io/workshops/"/>
- <updated>2022-02-06T18:43:26+01:00</updated>
+ <updated>2022-02-06T20:50:32+01:00</updated>
  <id>https://utcg.github.io</id>
  <author>
    <name>UofT Computer Graphics Club</name>
@@ -76,7 +76,7 @@
 
 &lt;h2 id=&quot;fragment-shader-basics-transformations-colour---mandelbrot-set&quot;&gt;Fragment shader basics, Transformations, Colour - Mandelbrot Set&lt;/h2&gt;
 
-&lt;p&gt;To learn the basics, let’s start by rendering the &lt;a href=&quot;https://en.wikipedia.org/wiki/Mandelbrot_set&quot;&gt;Mandelbrot set&lt;/a&gt;. Here’s some &lt;a href=&quot;[https://www.shadertoy.com/view/NdsyDX](https://www.shadertoy.com/view/NdsyDX)&quot;&gt;starter code&lt;/a&gt; - we won’t be paying much attention to the math, so the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mandel()&lt;/code&gt; function is provided (and you don’t need to understand it).&lt;/p&gt;
+&lt;p&gt;To learn the basics, let’s start by rendering the &lt;a href=&quot;https://en.wikipedia.org/wiki/Mandelbrot_set&quot;&gt;Mandelbrot set&lt;/a&gt;. We’ve provided some starter code, linked below. We won’t be paying much attention to the mathematics behind the Mandelbrot set, so the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mandel()&lt;/code&gt; function is provided (and you don’t need to understand it).&lt;/p&gt;
 
 &lt;iframe width=&quot;640&quot; height=&quot;360&quot; frameborder=&quot;0&quot; src=&quot;https://www.shadertoy.com/embed/fsSyW3?gui=true&amp;amp;t=10&amp;amp;paused=true&amp;amp;muted=false&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
