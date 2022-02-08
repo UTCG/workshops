@@ -4,7 +4,7 @@
  <title>UTCG Workshops</title>
  <link href="https://utcg.github.io/workshops/atom.xml" rel="self"/>
  <link href="https://utcg.github.io/workshops/"/>
- <updated>2022-02-08T06:26:13+01:00</updated>
+ <updated>2022-02-08T06:29:15+01:00</updated>
  <id>https://utcg.github.io</id>
  <author>
    <name>UofT Computer Graphics Club</name>
@@ -36,7 +36,7 @@
 
 &lt;iframe width=&quot;640&quot; height=&quot;360&quot; frameborder=&quot;0&quot; src=&quot;https://www.shadertoy.com/embed/fsSyDd?gui=true&amp;amp;t=10&amp;amp;paused=true&amp;amp;muted=false&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
-&lt;p&gt;(make sure to click play on this one, and press the ⏮ button to restart)&lt;/p&gt;
+&lt;p&gt;(we’ve turned off autoplay for this one, make sure to click the ⏮ button to restart and then the ▶️ to play it)&lt;/p&gt;
 
 &lt;iframe width=&quot;640&quot; height=&quot;360&quot; frameborder=&quot;0&quot; src=&quot;https://www.shadertoy.com/embed/sdSczG?gui=true&amp;amp;t=10&amp;amp;paused=false&amp;amp;muted=false&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
