@@ -4,7 +4,7 @@
  <title>UTCG Workshops</title>
  <link href="https://utcg.github.io/workshops/atom.xml" rel="self"/>
  <link href="https://utcg.github.io/workshops/"/>
- <updated>2022-02-06T20:50:32+01:00</updated>
+ <updated>2022-02-08T06:26:13+01:00</updated>
  <id>https://utcg.github.io</id>
  <author>
    <name>UofT Computer Graphics Club</name>
@@ -32,7 +32,15 @@
 
 &lt;h3 id=&quot;what-are-we-gonna-cover&quot;&gt;What are we gonna cover?&lt;/h3&gt;
 
-&lt;p&gt;This workshop covers the basics of shader programming in GLSL. We’ll only be making 2D graphics. We’re hoping that by the end of the workshop, you have a good enough grasp on shader programming that you can make your own animated noise art, and get started working on more complicated shaders for your own graphics and game development projects (or Minecraft).&lt;/p&gt;
+&lt;p&gt;This workshop covers the basics of 2D shader programming in GLSL. We’re hoping that by the end of the workshop, you have a good enough grasp on shader programming that you can make your own animated noise art, and get started working on more complicated shaders for your own graphics and game development projects (or Minecraft). Here are some examples of shaders we made using only the techniques covered in this workshop:&lt;/p&gt;
+
+&lt;iframe width=&quot;640&quot; height=&quot;360&quot; frameborder=&quot;0&quot; src=&quot;https://www.shadertoy.com/embed/fsSyDd?gui=true&amp;amp;t=10&amp;amp;paused=true&amp;amp;muted=false&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;(make sure to click play on this one, and press the ⏮ button to restart)&lt;/p&gt;
+
+&lt;iframe width=&quot;640&quot; height=&quot;360&quot; frameborder=&quot;0&quot; src=&quot;https://www.shadertoy.com/embed/sdSczG?gui=true&amp;amp;t=10&amp;amp;paused=false&amp;amp;muted=false&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;iframe width=&quot;640&quot; height=&quot;360&quot; frameborder=&quot;0&quot; src=&quot;https://www.shadertoy.com/embed/fdSyDd?gui=true&amp;amp;t=10&amp;amp;paused=false&amp;amp;muted=false&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;We hope that you follow along through the code during the workshop, whether you’re writing it yourself with us or uncommenting lines as we write them. Below is all the code we’ll be using:&lt;/p&gt;
 
@@ -59,7 +67,7 @@
   &lt;/li&gt;
   &lt;li&gt;Competition
     &lt;ul&gt;
-      &lt;li&gt;Starter code: &lt;a href=&quot;https://www.shadertoy.com/view/sdSczG&quot;&gt;https://www.shadertoy.com/view/sdSczG&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;Starter code: &lt;a href=&quot;https://www.shadertoy.com/view/fsBcWd&quot;&gt;https://www.shadertoy.com/view/fsBcWd&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -272,7 +280,7 @@
 &lt;ul&gt;
   &lt;li&gt;Starter code for example: &lt;a href=&quot;https://www.shadertoy.com/view/7s2yzy&quot;&gt;https://www.shadertoy.com/view/7s2yzy&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;Example finished code: &lt;a href=&quot;https://www.shadertoy.com/view/ssScDw&quot;&gt;https://www.shadertoy.com/view/ssScDw&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Competition starter code: &lt;a href=&quot;https://www.shadertoy.com/view/sdSczG&quot;&gt;https://www.shadertoy.com/view/sdSczG&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Competition starter code: &lt;a href=&quot;https://www.shadertoy.com/view/fsBcWd&quot;&gt;https://www.shadertoy.com/view/fsBcWd&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;creating-patterns-with-functions&quot;&gt;Creating patterns with functions&lt;/h3&gt;
@@ -317,7 +325,15 @@
 
 &lt;p&gt;When you’re done, submit your shader to the competition by listing it as “public” and adding the tag &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;utcg2022&lt;/code&gt;.&lt;/p&gt;
 
-&lt;h2 id=&quot;where-to-learn-more&quot;&gt;Where to learn more&lt;/h2&gt;
+&lt;h2 id=&quot;the-end&quot;&gt;The end&lt;/h2&gt;
+
+&lt;p&gt;That’s the end of the workshop, hope you learned a lot and had fun!&lt;/p&gt;
+
+&lt;h3 id=&quot;what-you-can-do-with-this&quot;&gt;What you can do with this&lt;/h3&gt;
+
+&lt;p&gt;If you scroll down on Shadertoy, at the bottom of the screen you’ll see a link to a &lt;a href=&quot;https://steamcommunity.com/sharedfiles/filedetails/?id=1726697188&quot;&gt;Screensaver&lt;/a&gt; plugin made by &lt;a href=&quot;https://www.shadertoy.com/user/kosro&quot;&gt;Kosro&lt;/a&gt;, which can be used to turn your shaders into a screensaver for Windows when installed on top of &lt;a href=&quot;https://store.steampowered.com/app/431960/Wallpaper_Engine/&quot;&gt;Wallpaper Engine&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;where-to-learn-more&quot;&gt;Where to learn more&lt;/h3&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://thebookofshaders.com/&quot;&gt;The Book of Shaders&lt;/a&gt; is an incomplete resource on GLSL programming, but the pages it does have are excellent quality and easy to follow. They’re especially great if you’re interested in more complex noise art, like &lt;a href=&quot;https://thebookofshaders.com/edit.php#11/lava-lamp.frag&quot;&gt;this&lt;/a&gt; from page 11.&lt;/p&gt;
 
@@ -325,7 +341,7 @@
 
 &lt;p&gt;There are many more tutorials on shaders that are just a search away, since GLSL is a very widely-used technology. Plus, they’re covered a little bit in &lt;a href=&quot;https://github.com/alecjacobson/computer-graphics-csc317&quot;&gt;CSC317 - Computer Graphics&lt;/a&gt; (formerly CSC418).&lt;/p&gt;
 
-&lt;h2 id=&quot;thanks&quot;&gt;Thanks!&lt;/h2&gt;
+&lt;h3 id=&quot;thanks&quot;&gt;Thanks!&lt;/h3&gt;
 
 &lt;p&gt;If you enjoyed this workshop, make sure you follow us on social media, join our mailing list, and join our Discord to keep up with our other events! You can find all of it on our website &lt;a href=&quot;https://utcg.club/&quot;&gt;utcg.club&lt;/a&gt;.&lt;/p&gt;
 </content>
