@@ -17,6 +17,30 @@
 "items": [
     
         {
+            "id": "https://utcg.github.io/workshops/2022/03/01/model1",
+            "title": "Model UofT session 1 recording",
+            "summary": "Modelling Robarts!",
+            "content_text": "Model UofT - session 1Here’s the recording for the first session of UTCG’s Model UofT project, on February 28, 2022.",
+            "content_html": "<h1 id=\"model-uoft---session-1\">Model UofT - session 1</h1><p>Here’s the recording for the first session of UTCG’s Model UofT project, on February 28, 2022.</p><video style=\"max-width:100%\" controls=\"\" src=\"https://github.com/UTCG/workshops/releases/download/v1.1.1/Model1.mp4\"></video>",
+            "url": "https://utcg.github.io/workshops/2022/03/01/model1",
+            
+            
+            
+            
+            
+            "date_published": "2022-03-01T00:00:00+01:00",
+            "date_modified": "2022-03-01T00:00:00+01:00",
+            
+                "author":  {
+                "name": "UofT Computer Graphics Club",
+                "url": null,
+                "avatar": null
+                }
+                
+            
+        },
+    
+        {
             "id": "https://utcg.github.io/workshops/2022/02/10/shaders",
             "title": "Shaders",
             "summary": null,

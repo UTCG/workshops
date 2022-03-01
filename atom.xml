@@ -4,13 +4,26 @@
  <title>UTCG Workshops</title>
  <link href="https://utcg.github.io/workshops/atom.xml" rel="self"/>
  <link href="https://utcg.github.io/workshops/"/>
- <updated>2022-02-08T06:34:49+01:00</updated>
+ <updated>2022-03-01T21:52:23+01:00</updated>
  <id>https://utcg.github.io</id>
  <author>
    <name>UofT Computer Graphics Club</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Model UofT session 1 recording</title>
+   <link href="https://utcg.github.io/workshops/2022/03/01/model1"/>
+   <updated>2022-03-01T00:00:00+01:00</updated>
+   <id>https://utcg.github.io/2022/03/01/model1</id>
+   <content type="html">&lt;h1 id=&quot;model-uoft---session-1&quot;&gt;Model UofT - session 1&lt;/h1&gt;
+
+&lt;p&gt;Here’s the recording for the first session of UTCG’s Model UofT project, on February 28, 2022.&lt;/p&gt;
+
+&lt;video style=&quot;max-width:100%&quot; controls=&quot;&quot; src=&quot;https://github.com/UTCG/workshops/releases/download/v1.1.1/Model1.mp4&quot;&gt;&lt;/video&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Shaders</title>
