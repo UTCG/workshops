@@ -4,7 +4,7 @@
  <title>UTCG Workshops</title>
  <link href="https://utcg.github.io/workshops/atom.xml" rel="self"/>
  <link href="https://utcg.github.io/workshops/"/>
- <updated>2022-03-01T21:52:23+01:00</updated>
+ <updated>2022-03-10T07:15:50+01:00</updated>
  <id>https://utcg.github.io</id>
  <author>
    <name>UofT Computer Graphics Club</name>
@@ -357,6 +357,14 @@
 &lt;h3 id=&quot;thanks&quot;&gt;Thanks!&lt;/h3&gt;
 
 &lt;p&gt;If you enjoyed this workshop, make sure you follow us on social media, join our mailing list, and join our Discord to keep up with our other events! You can find all of it on our website &lt;a href=&quot;https://utcg.club/&quot;&gt;utcg.club&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;recording-of-the-workshop-from-february-2022&quot;&gt;Recording of the workshop from February 2022&lt;/h3&gt;
+
+&lt;p&gt;Here’s a recording of the workshop as it ran on February 10, 2021.&lt;/p&gt;
+
+&lt;video style=&quot;max-width:100%&quot; controls=&quot;&quot; src=&quot;https://github.com/UTCG/workshops/releases/download/shaders_workshop/shaders_workshop.mp4&quot;&gt;&lt;/video&gt;
+
+&lt;p&gt;If the video doesn’t work you can &lt;a href=&quot;https://github.com/UTCG/workshops/releases/download/shaders_workshop/shaders_workshop.mp4&quot;&gt;download it&lt;/a&gt;.&lt;/p&gt;
 </content>
  </entry>
  
