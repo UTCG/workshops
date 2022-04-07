@@ -4,7 +4,7 @@
  <title>UTCG Workshops</title>
  <link href="https://utcg.github.io/workshops/atom.xml" rel="self"/>
  <link href="https://utcg.github.io/workshops/"/>
- <updated>2022-04-07T09:02:17+02:00</updated>
+ <updated>2022-04-07T09:06:09+02:00</updated>
  <id>https://utcg.github.io</id>
  <author>
    <name>UofT Computer Graphics Club</name>
@@ -18,6 +18,8 @@
    <updated>2022-04-07T00:00:00+02:00</updated>
    <id>https://utcg.github.io/2022/04/07/globe</id>
    <content type="html">&lt;h1 id=&quot;udesign-x-utcg-workshop&quot;&gt;UDesign x UTCG Workshop&lt;/h1&gt;
+
+&lt;p&gt;Here’s the git repo for this part of the workshop. Please clone/download it, so that you can use the starter code! &lt;a href=&quot;https://github.com/UTCG/udesign-globe&quot;&gt;https://github.com/UTCG/udesign-globe&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;running-the-site&quot;&gt;Running the site&lt;/h2&gt;
 
@@ -217,7 +219,7 @@
 
 &lt;p&gt;We chose some wacky colours here, but try changing them all to black for a sleeker look.&lt;/p&gt;
 
-&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+&lt;h2 id=&quot;fin&quot;&gt;Fin&lt;/h2&gt;
 
 &lt;p&gt;That’s our basic globe widget! It was inspired particularly by the one on the &lt;a href=&quot;https://github.com/home&quot;&gt;GitHub homepage&lt;/a&gt;, though we didn’t go through the same &lt;a href=&quot;https://github.blog/2020-12-21-how-we-built-the-github-globe/&quot;&gt;process&lt;/a&gt; since that’s kinda insane. Though you can definitely get results that look pretty good using better choice in textures, messing with lighting, and maybe adding your own shaders.&lt;/p&gt;
 
