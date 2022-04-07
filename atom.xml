@@ -4,7 +4,7 @@
  <title>UTCG Workshops</title>
  <link href="https://utcg.github.io/workshops/atom.xml" rel="self"/>
  <link href="https://utcg.github.io/workshops/"/>
- <updated>2022-04-07T09:06:09+02:00</updated>
+ <updated>2022-04-07T23:03:38+02:00</updated>
  <id>https://utcg.github.io</id>
  <author>
    <name>UofT Computer Graphics Club</name>
@@ -21,11 +21,13 @@
 
 &lt;p&gt;Here’s the git repo for this part of the workshop. Please clone/download it, so that you can use the starter code! &lt;a href=&quot;https://github.com/UTCG/udesign-globe&quot;&gt;https://github.com/UTCG/udesign-globe&lt;/a&gt;&lt;/p&gt;
 
+&lt;p&gt;The finished scene will look something like &lt;a href=&quot;https://utcg.github.io/udesign-globe/final&quot;&gt;this&lt;/a&gt;.&lt;/p&gt;
+
 &lt;h2 id=&quot;running-the-site&quot;&gt;Running the site&lt;/h2&gt;
 
 &lt;p&gt;In order to avoid the notorious &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors&quot;&gt;CORS errors&lt;/a&gt;, we need to serve our website from a web server instead of just opening the HTML page in a browser from our file system. Luckily, this is easy!&lt;/p&gt;
 
-&lt;p&gt;If you already have Python installed, you can simply go to the directory that stores your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index.html&lt;/code&gt; and run the command &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;python3 -m http.server&lt;/code&gt; (or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;python -m SimpleHTTPServer&lt;/code&gt; if you’re using Python 2). Then your website will be live at &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;http://localhost:8000/index.html&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;If you already have Python installed, you can simply go to the directory that stores your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index.html&lt;/code&gt; and run the command &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;python3 -m http.server&lt;/code&gt; (or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;python -m SimpleHTTPServer&lt;/code&gt; if you’re using Python 2). Then your website will be live at &lt;a href=&quot;http://localhost:8000/index.html&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;http://localhost:8000/index.html&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;If you have &lt;a href=&quot;&quot;&gt;VS Code&lt;/a&gt; installed, you can also use the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ritwickdey.LiveServer&lt;/code&gt; extension.&lt;/p&gt;
 
@@ -40,7 +42,7 @@
 &lt;p&gt;Every scene made with three.js has a few basic objects.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;the Scene (&lt;a href=&quot;https://threejs.org/docs/?q=scene#api/en/scenes/Scene&quot;&gt;THREE.Scene&lt;/a&gt;
+  &lt;li&gt;the Scene &lt;a href=&quot;https://threejs.org/docs/?q=scene#api/en/scenes/Scene&quot;&gt;THREE.Scene&lt;/a&gt;
     &lt;ul&gt;
       &lt;li&gt;This is a representation of all the 3D objects within our scene.&lt;/li&gt;
     &lt;/ul&gt;
